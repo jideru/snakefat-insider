@@ -150,7 +150,6 @@ Find the `blogs` array near the top of `App.jsx` and add a new object:
   author: "Pip Gallowglass, Rogue (Unauthorized Correspondent)",
   image: "https://images.unsplash.com/photo-XXXXXXX?w=600&q=80",
   preview: "Your blog preview text goes here...",
-  readTime: "5 min read",
 },
 ```
 
