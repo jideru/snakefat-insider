@@ -65,7 +65,7 @@ export default function BlogCard({ blog, index, onRead }) {
           overflow: "hidden",
         }}>
           <img
-            src={blog.image}
+            src={blog.thumbnail ?? blog.image}
             alt={blog.title}
             style={{
               width: "100%",
