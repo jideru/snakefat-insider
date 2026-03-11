@@ -146,8 +146,9 @@ export default function BlogCard({ blog, index, onRead }) {
         display: "flex",
         borderTop: `2px solid ${colors.textDark}`,
       }}>
-         {/* Author */}
-        <div style={{
+       <style>{`@media (max-width: 480px) { .card-author { display: none !important; } }`}</style>
+        {/* Author */}
+        <div className="card-author" style={{
           flex: 1,
           padding: "7px 12px",
           background: colors.textDark,
