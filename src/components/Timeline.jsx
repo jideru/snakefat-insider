@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import BlogCard from "./BlogCard.jsx";
-import { colors, fonts } from "../styles/theme.js";
 
 /* ── inject scoped CSS once ─────────────────────────────────────────────── */
 function injectCSS() {
@@ -10,22 +9,22 @@ function injectCSS() {
   s.textContent = `
     .tl-wrap {
       position: relative;
-      max-width: 1160px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 0 2rem 6rem;
+      padding: calc(1.5rem + 25px) 2rem 8rem;
     }
 
     /* ── straight dashed spine — stops at centre of End.png ── */
     .tl-line {
       position: absolute;
       left: 50%;
-      top: 0;
-      bottom: calc(6rem + 46px);
+      top: 25px;
+      bottom: calc(2rem + 96px);
       width: 3px;
       transform: translateX(-50%);
       background: repeating-linear-gradient(
         to bottom,
-        #8b2a0a 0 14px,
+        #250000 0 14px,
         transparent 14px 26px
       );
       opacity: 0.7;
@@ -58,14 +57,14 @@ function injectCSS() {
       width: 18px;
       height: 18px;
       border-radius: 50%;
-      border: 3px solid #8b2a0a;
-      background: #ede3ce;
+      border: 2px solid #4b2e13;
+      background: #f9f2e3;
       z-index: 3;
       pointer-events: none;
       transition: background 0.2s, transform 0.2s;
     }
     .tl-row:hover .tl-dot {
-      background: #8b2a0a;
+      background: #4b2e13;
       transform: translate(-50%, -50%) scale(1.35);
     }
 
@@ -74,7 +73,7 @@ function injectCSS() {
       position: absolute;
       top: 50%;
       height: 2px;
-      background: #8b2a0a;
+      background: #4b2e13;
       opacity: 0.35;
       transform: translateY(-50%);
       z-index: 2;
@@ -83,21 +82,20 @@ function injectCSS() {
 
     /* ── end marker ── */
     .tl-end {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 10px;
-      padding-top: 4px;
-      margin-top: -36px;
-      margin-left: 5px;
-      position: relative;
       z-index: 3;
     }
     .tl-end-label {
-      font-family: 'Courier Prime', monospace;
-      font-style: italic;
+      font-family: serif;
       font-size: 0.8rem;
-      color: #8b2a0a;
+      color: #4b2e13;
       opacity: 0.85;
       letter-spacing: 0.4px;
     }
@@ -119,7 +117,7 @@ function injectCSS() {
       .tl-dot  { left: 37px; top: 50%; transform: translate(-50%, -50%); }
       .tl-row:hover .tl-dot { transform: translate(-50%, -50%) scale(1.35); }
       .tl-tick { display: none; }
-      .tl-end  { align-items: flex-start; padding-left: 1px; }
+      .tl-end  { position: absolute; bottom: calc(2rem + 34px); left: 3px; transform: none; flex-direction: row; align-items: center; gap: 8px; }
     }
   `;
   document.head.appendChild(s);
@@ -172,26 +170,51 @@ export default function Timeline({ blogs, onRead }) {
   useEffect(injectCSS, []);
 
   return (
-    <main className="tl-wrap">
-      <div className="tl-line" />
-
-      {blogs.map((blog, i) => (
-        <Row key={blog.id} blog={blog} index={i} onRead={onRead} />
-      ))}
-
-      <div className="tl-end">
+    <>
+      {/* Logo above the timeline */}
+      <div style={{
+        display: "flex",
+        justifyContent: "center",
+        maxWidth: "1100px",
+        margin: "0 auto 1.5rem",
+        padding: "0 2rem",
+      }}>
         <img
-          src="/Assets/Images/End.png"
-          alt="End"
+          src="/Assets/Images/snakefatInsider.png"
+          alt="The Snakefat Insider"
           style={{
-            width: "72px",
-            height: "72px",
-            objectFit: "contain",
+            maxWidth: "320px",
+            width: "100%",
+            height: "auto",
+            border: "2px solid #4b2e13",
+            borderRadius: "8px",
+            boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
             mixBlendMode: "multiply",
           }}
         />
-        <span className="tl-end-label">Our intrepid adventurers are here!</span>
       </div>
-    </main>
+
+      <main className="tl-wrap">
+        <div className="tl-line" />
+
+        {blogs.map((blog, i) => (
+          <Row key={blog.id} blog={blog} index={i} onRead={onRead} />
+        ))}
+
+        <div className="tl-end">
+          <img
+            src="/Assets/Images/End.png"
+            alt="End"
+            style={{
+              width: "72px",
+              height: "72px",
+              objectFit: "contain",
+              mixBlendMode: "multiply",
+            }}
+          />
+          <span className="tl-end-label">Our intrepid adventurers are here!</span>
+        </div>
+      </main>
+    </>
   );
 }

@@ -28,7 +28,7 @@ export default function App() {
       <div style={{
         minHeight: "100vh",
         background: colors.pageGradient,
-        fontFamily: "'Courier Prime', monospace",
+        fontFamily: "serif",
         position: "relative",
       }}>
 

@@ -50,10 +50,10 @@ export default function BlogModal({ blog, onClose }) {
         style={{
           background: colors.modalBg,
           border: `1px solid ${colors.border}`,
-          borderRadius: "3px",
+          borderRadius: "14px",
           maxWidth: "720px",
           width: "100%",
-          boxShadow: "0 24px 80px rgba(20,10,0,0.45)",
+          boxShadow: "0 6px 32px rgba(0,0,0,0.12)",
           animation: "slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)",
           position: "relative",
         }}
@@ -82,7 +82,7 @@ export default function BlogModal({ blog, onClose }) {
         </button>
 
         {/* ── Hero image ── */}
-        <div style={{ position: "relative", height: "280px", overflow: "hidden", borderRadius: "3px 3px 0 0" }}>
+        <div style={{ position: "relative", height: "280px", overflow: "hidden", borderRadius: "14px 14px 0 0" }}>
           <img
             src={blog.image}
             alt={blog.title}
@@ -111,11 +111,12 @@ export default function BlogModal({ blog, onClose }) {
             </div>
             <h2 style={{
               fontFamily: fonts.display,
-              color: "#fdf6e8",
+              color: colors.accentGold,
               fontSize: "1.6rem",
               fontWeight: 400,
               lineHeight: 1.25,
-              textShadow: "0 2px 12px rgba(0,0,0,0.6)",
+              letterSpacing: "0.04em",
+              textShadow: "2px 2px 0 #ffe7a0, 0 2px 6px #00000033",
             }}>
               {blog.title}
             </h2>
