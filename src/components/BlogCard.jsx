@@ -29,39 +29,39 @@ const ROTATIONS = [-2, 1.5, -1.2, 2.2, -1.8, 1, -2.5, 1.5];
 
 export default function BlogCard({ blog, index, onRead }) {
   const [hovered, setHovered] = useState(false);
-  const isLeft   = index % 2 === 0;
   const rotation = ROTATIONS[index % ROTATIONS.length];
   const readMins  = calcReadTime(blog.content);
 
   return (
     <div
+      onClick={() => onRead(blog)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
         width: "380px",
         background: hovered ? colors.cardBgHover : colors.cardBg,
-        border: `2px solid ${hovered ? colors.borderHover : colors.textDark}`,
-        borderRadius: "3px",
+        border: `1px solid ${hovered ? colors.borderHover : "rgba(0,0,0,0.25)"}`,
+        borderRadius: "12px",
         overflow: "hidden",
         cursor: "pointer",
         position: "relative",
         transform: `rotate(${hovered ? rotation * 0.4 : rotation}deg) ${hovered ? "scale(1.03)" : "scale(1)"}`,
         transition: "all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1)",
         boxShadow: hovered
-          ? "6px 8px 28px rgba(44,26,8,0.28), 2px 3px 8px rgba(44,26,8,0.15)"
-          : "4px 5px 18px rgba(44,26,8,0.18), 1px 2px 5px rgba(44,26,8,0.1)",
+          ? "0 6px 18px rgba(0,0,0,0.18)"
+          : "0 4px 10px rgba(0,0,0,0.08)",
       }}
     >
       {/* ── Top row: thumbnail + metadata ── */}
-      <div style={{ display: "flex", gap: "12px", padding: "14px 14px 10px" }}>
+      <div style={{ display: "flex", gap: "12px", padding: "16px 16px 12px" }}>
 
         {/* Thumbnail */}
         <div style={{
           flexShrink: 0,
           width: "90px",
           height: "90px",
-          border: `1.5px solid ${colors.textDark}`,
-          borderRadius: "2px",
+          border: `1px solid ${colors.border}`,
+          borderRadius: "10px",
           overflow: "hidden",
         }}>
           <img
@@ -82,7 +82,6 @@ export default function BlogCard({ blog, index, onRead }) {
         <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", gap: "4px" }}>
           <div style={{
             fontFamily: fonts.body,
-            fontStyle: "italic",
             color: colors.textMuted,
             fontSize: "0.7rem",
             letterSpacing: "0.5px",
@@ -91,12 +90,12 @@ export default function BlogCard({ blog, index, onRead }) {
           </div>
           <div style={{
             fontFamily: fonts.display,
-            color: colors.textDark,
-            fontSize: "0.95rem",
+            color: colors.textSubtle,
+            fontSize: "1rem",
             fontWeight: 400,
             lineHeight: 1.25,
-            textDecoration: "underline",
-            textUnderlineOffset: "3px",
+            letterSpacing: "0.04em",
+            textShadow: "2px 2px 0 #ffe7a0, 0 2px 6px #00000033",
           }}>
             {blog.title}
           </div>
@@ -122,7 +121,7 @@ export default function BlogCard({ blog, index, onRead }) {
 
       {/* ── Skull divider ── */}
       <div style={{ padding: "0 14px", marginBottom: "8px" }}>
-        <Divider symbol="☠" color={colors.textDark} lineColor={colors.textDark} />
+        <Divider symbol="☠" color={colors.textDark} lineColor={colors.borderLight} />
       </div>
 
       {/* ── Preview text ── */}
@@ -144,16 +143,16 @@ export default function BlogCard({ blog, index, onRead }) {
       {/* ── Footer bar ── */}
       <div style={{
         display: "flex",
-        borderTop: `2px solid ${colors.textDark}`,
+        borderTop: `1px dotted ${colors.borderLight}`,
       }}>
        <style>{`@media (max-width: 480px) { .card-author { display: none !important; } }`}</style>
         {/* Author */}
         <div className="card-author" style={{
           flex: 1,
           padding: "7px 12px",
-          background: colors.textDark,
+          background: colors.accentRed,
           fontFamily: fonts.display,
-          color: "#fdf6e8",
+          color: colors.accentGold,
           fontSize: "0.65rem",
           letterSpacing: "1.5px",
           display: "flex",
@@ -168,9 +167,9 @@ export default function BlogCard({ blog, index, onRead }) {
         <div style={{
           flex: 1,
           padding: "7px 24px",
-          background: colors.textDark,
+          background: colors.accentRed,
           fontFamily: fonts.display,
-          color: "#fdf6e8",
+          color: colors.accentGold,
           fontSize: "0.65rem",
           letterSpacing: "1.5px",
           display: "flex",
@@ -189,11 +188,11 @@ export default function BlogCard({ blog, index, onRead }) {
           onClick={(e) => { e.stopPropagation(); onRead(blog); }}
           style={{
             padding: "7px 24px",
-            background: hovered ? "#6b1f07" : colors.accentRed,
+            background: hovered ? "#2a1500" : colors.borderHover,
             border: "none",
-            borderLeft: `2px solid ${hovered ? "#6b1f07" : colors.accentRed}`,
+            borderLeft: `1px solid rgba(0,0,0,0.25)`,
             fontFamily: fonts.display,
-            color: "#fdf6e8",
+            color: colors.accentGold,
             fontSize: "0.65rem",
             letterSpacing: "1.5px",
             cursor: "pointer",
