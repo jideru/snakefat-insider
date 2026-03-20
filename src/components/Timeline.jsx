@@ -174,7 +174,8 @@ export default function Timeline({ blogs, onRead }) {
       {/* Logo above the timeline */}
       <div style={{
         display: "flex",
-        justifyContent: "center",
+        flexDirection: "column",
+        alignItems: "center",
         maxWidth: "1100px",
         margin: "0 auto 1.5rem",
         padding: "0 2rem",
@@ -192,6 +193,40 @@ export default function Timeline({ blogs, onRead }) {
             mixBlendMode: "multiply",
           }}
         />
+        <a
+          href="https://snakefat-home.vercel.app/"
+          style={{
+            marginTop: "5px",
+            maxWidth: "320px",
+            width: "100%",
+            padding: "10px 24px",
+            backgroundColor: "#4b2e13",
+            color: "#f9f2e3",
+            border: "2px solid #4b2e13",
+            borderRadius: "4px",
+            textDecoration: "none",
+            fontFamily: "serif",
+            fontSize: "1rem",
+            fontWeight: "500",
+            cursor: "pointer",
+            transition: "all 0.2s ease-in-out",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "8px",
+            boxSizing: "border-box",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = "#f9f2e3";
+            e.currentTarget.style.color = "#4b2e13";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "#4b2e13";
+            e.currentTarget.style.color = "#f9f2e3";
+          }}
+        >
+          ← Home
+        </a>
       </div>
 
       <main className="tl-wrap">
