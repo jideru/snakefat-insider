@@ -199,30 +199,31 @@ export default function Timeline({ blogs, onRead }) {
             marginTop: "5px",
             maxWidth: "320px",
             width: "100%",
-            padding: "10px 24px",
-            backgroundColor: "#4b2e13",
-            color: "#f9f2e3",
-            border: "2px solid #4b2e13",
-            borderRadius: "4px",
+            padding: "8px 14px",
+            backgroundColor: "#3a2200",
+            color: "#ffe7a0",
+            border: "1px solid #4b2e13",
+            borderRadius: "8px",
             textDecoration: "none",
-            fontFamily: "serif",
-            fontSize: "1rem",
+            fontFamily: "'Pirata One', cursive, fantasy, serif",
+            fontSize: "1.05rem",
             fontWeight: "500",
+            letterSpacing: "0.08em",
+            textTransform: "uppercase",
             cursor: "pointer",
             transition: "all 0.2s ease-in-out",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "8px",
+            display: "block",
+            textAlign: "center",
+            lineHeight: "1.1",
             boxSizing: "border-box",
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "#f9f2e3";
-            e.currentTarget.style.color = "#4b2e13";
+            e.currentTarget.style.backgroundColor = "#ffe7a0";
+            e.currentTarget.style.color = "#3a2200";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "#4b2e13";
-            e.currentTarget.style.color = "#f9f2e3";
+            e.currentTarget.style.backgroundColor = "#3a2200";
+            e.currentTarget.style.color = "#ffe7a0";
           }}
         >
           ← Home
