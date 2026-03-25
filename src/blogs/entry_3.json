@@ -1,13 +1,13 @@
 {
   "id": 3,
-  "date": "12th Day of the Harvest Moon, Year 682 After Baronies Founding",
+  "date": "7th Day of the Harvest Moon, Year 682 After Baronies Founding",
   "location": "Snakefat",
-  "title": "EARTHQUAKE!",
-  "author": "",
+  "title": "Not all is bad in Snakefat",
+  "author": "Boon J. Cobson",
   "sessions": 0,
-  "image": "evil-gate.png",
-  "preview": "An earthquake has struck Snakefat! The tremors were felt across the town and the surrounding areas.",
-  "content": "",
-  "thumbnail": "earthquake.png",
-  "type": "event"
+  "image": "adventurerAleBoard.png",
+  "preview": "As we all know the druidic circles are a popular place for the youth of the town to go to, where they play tricks and do their nightly parties. Who among us has not gone there when young with stolen wine or even more? He who is innocent cast the first stone. But ...",
+  "content": "Despite our recent list of mishaps and misfortunes, not all is bad in Snakefat. We have our the opening of our first tavern, the Adventurer's Ale. This tavern is run by the former adventurer and now retired Jon Redbyrd, the Adventurer's Ale is a place for all to gather and share their stories, their drinks and their company. A new place for us townsfolk to enjoy ourselves and forget about our troubles for a while. \n\nThe Adventurer's Ale has a great selection of drinks and food, recipes apparently created by the famous adventurer Berry. The tavern has a great atmosphere, with a cozy fireplace and a friendly staff. The tavern also has a stage for live performances and three rooms for rent.\n\nWho will stay here? Who knows, might be even a few locals that need it only for a few hours but I leave gossip to our gossip reporter San Frescher\n\nThe Adventurer's Ale is a great addition and, apparently Jon Redbyrd is a collector of treasure maps, buying and selling. When we spoke to Jon he told us that he hopes that the Adventurer's Ale becomes a place that will be a starting point for many adventurers or those looking to either hire or be hired for the adventures in the local region.\n\nLet's all hope that it does become a place that brings another form of income to our town.",
+  "thumbnail": "snakefat-tavern.png",
+  "type": "news"
 }
