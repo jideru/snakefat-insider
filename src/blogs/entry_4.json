@@ -6,8 +6,7 @@
   "author": "",
   "sessions": 0,
   "image": "evil-gate.png",
-  "preview": "An earthquake has struck Snakefat! The tremors were felt across the town and the surrounding areas.",
-  "content": "",
+  "content": "Snakefat and the surrounding areas were hit by a powerful earthquake.",
   "thumbnail": "earthquake.png",
   "type": "event"
 }

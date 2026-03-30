@@ -141,7 +141,7 @@ export default function BlogCard({ blog, index, onRead }) {
           WebkitBoxOrient: "vertical",
           overflow: "hidden",
         }}>
-          {blog.preview}
+          {blog.content.length > 150 ? blog.content.slice(0, 150) + "..." : blog.content}
         </p>
       </div>
 
